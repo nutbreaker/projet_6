@@ -1,0 +1,23 @@
+name: sportsee
+
+services:
+  frontend:
+    build:
+      context: ./frontend
+      target: development-dependencies-env
+    volumes:
+      - ./frontend:/app 
+    command: sh -c "npm run dev  -- --host 0.0.0.0"
+    ports:
+      - "8080:8080"
+    depends_on:
+      - micro-api
+    container_name: sportsee-frontend
+  
+  micro-api:
+    build:
+      context: ./backend
+    command: sh -c "npm run start"
+    ports:
+      - "8000:8000"
+    container_name: sportsee-backend
