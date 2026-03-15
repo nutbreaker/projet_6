@@ -5,6 +5,7 @@
   "scripts": {
     "build": "react-router build",
     "dev": "react-router dev --port 8080",
+    "dev:prod": "npm run dev -- --mode production",
     "start": "react-router-serve ./build/server/index.js"
   },
   "dependencies": {
