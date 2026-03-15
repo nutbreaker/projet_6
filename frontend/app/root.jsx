@@ -1,19 +1,57 @@
 import {
-  Outlet
+  Links,
+  Meta,
+  Outlet,
+  Scripts,
+  ScrollRestoration,
 } from "react-router";
 
 import "./app.css";
 
-export default function App() {
+
+// refer to https://reactrouter.com/start/framework/route-module#links
+export const links = () => [
+  { rel: "icon", type: "image/x-icon", href: "/public/favicon.ico" },
+  { rel: 'stylesheet', href: 'https://unpkg.com/open-props' },
+];
+
+// refer to https://reactrouter.com/start/framework/route-module#meta
+export const meta = () => [
+  { charSet: 'utf-8' },
+  { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+];
+
+/** 
+ * @param {{ children: React.ReactNode }} props
+ * 
+ * @links https://reactrouter.com/api/framework-conventions/root.tsx#layout-export
+ * */
+export function Layout({ children }) {
   return (
     <html lang="en">
       <head>
-        <meta charSet="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <Meta />
+        <Links />
       </head>
       <body>
-        <Outlet />
+        {children}
+        <ScrollRestoration />
+        {/* 
+          without this HRM won't work. This doesn't seem to be mentioned in the documentation.
+          refer to https://reactrouter.com/api/components/Scripts
+        */}
+        <Scripts />
       </body>
     </html>
   );
+}
+
+export default function App() {
+  return <Outlet />;
+}
+
+export function ErrorBoundary({
+  error,
+}) {
+  return <>Some error</>
 }
