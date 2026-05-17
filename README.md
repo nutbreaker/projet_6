@@ -53,7 +53,9 @@ To get the project up and running quickly, follow these steps:
 - **`frontend/app/utils/`**: Utility functions
 - **`backend/`**: Node.js API provided via a Git submodule
 
-## Git Submodule (Backend Setup)
+## Miscellaneous
+
+### Git Submodule (Backend Setup)
 
 This project uses a Git submodule for the backend API.
 
@@ -72,11 +74,11 @@ This project uses a Git submodule for the backend API.
 - *(Reference) Add the submodule:*
   `git submodule add https://github.com/OpenClassrooms-Student-Center/P6JS.git backend`
 
-## Docker
+### Docker
 
 You can easily run the application (both frontend and backend) using Docker Compose.
 
-### Run containers
+#### Run containers
 
 Depending on your environment or Docker Compose version, you can start the project with:
 
