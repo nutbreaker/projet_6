@@ -43,11 +43,34 @@ export default defineConfig({
 
           // login
           if (pathname === "/api/login" && req.method === "POST") {
-            res.setHeader("Content-Type", "application/json");
-            res.end(JSON.stringify({
-              token: "mock-token",
-              userId: "user123"
-            }));
+            let body = "";
+
+            req.on("data", (chunk) => {
+              body += chunk.toString();
+            });
+
+            req.on("end", () => {
+              try {
+                const data = JSON.parse(body);
+
+                if (data.email === "user@email.com" && data.password === "asdf") {
+                  res.setHeader("Content-Type", "application/json");
+                  res.end(JSON.stringify({
+                    token: "mock-token",
+                    userId: 1
+                  }));
+                } else {
+                  res.statusCode = 401;
+                  res.setHeader("Content-Type", "application/json");
+                  res.end(JSON.stringify({ error: "Invalid username or password" }));
+                }
+
+              } catch (err) {
+                res.statusCode = 400;
+                res.setHeader("Content-Type", "application/json");
+                res.end(JSON.stringify({ error: "Bad Request" }));
+              }
+            });
 
             return;
           }

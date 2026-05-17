@@ -4,6 +4,7 @@
     "lastName": "Martin",
     "createdAt": "2025-01-01",
     "age": 32,
+    "gender": "female",
     "weight": 60,
     "height": 165,
     "profilePicture": "https://placehold.co/400"
