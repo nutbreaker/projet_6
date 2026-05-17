@@ -1,3 +1,97 @@
+/* Import Inter and Playfair fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,100..900&display=swap');
+
+/* 
+    ****************************************************************************
+    variables
+    ****************************************************************************
+*/
+:root {
+    /* Template */
+    --template-min-width: 102.4rem;
+    --template-max-width: 144rem;
+    --template-content-width: 114rem;
+
+    /* Colors */
+    --primary-color: #0B23F4;
+    --primary-hover: #5465F7;
+    --secondary-color: #B6BDFC;
+    --text-main: #111;
+    --text-muted: #707070;
+    --border-color: #717171;
+    --bg-main: #FFF;
+    --bg-body: #F2F3FF;
+    --bg-disabled: #E7E7E7;
+    --error-color: #F7481F;
+
+    /* Font */
+    --font-inter: Inter, sans-serif;
+    --font-inter-weight: 300;
+    --font-inter-weight-medium: 400;
+    --font-inter-weight-bold: 600;
+
+    --font-size-xs: 1.2rem;
+    --font-size-sm: 1.4rem;
+    --font-size-md: 1.6rem;
+    --font-size-lg: 2.2rem;
+    --font-size-xl: 2.8rem;
+
+    /* Default font */
+    font-size: 10px;
+    font-family: var(--font-inter);
+    font-weight: var(--font-inter-weight);
+
+    scrollbar-color: var(--primary-color) transparent;
+}
+
+/* 
+    ****************************************************************************
+    base & reset
+    ****************************************************************************
+*/
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    height: 100dvh;
+
+    background-color: var(--bg-body);
+}
+
+h2 {
+    margin: 0;
+    color: var(--text-main);
+    font-size: var(--font-size-lg);
+    font-weight: 500;
+}
+
+/* 
+    ****************************************************************************
+    layout
+    ****************************************************************************
+*/
+header {
+    display: flex;
+    justify-content: space-between;
+
+    min-width: var(--template-min-width);
+    max-width: var(--template-content-width);
+    margin: 3.5rem auto 10.8rem;
+    padding-inline: 1rem;
+}
+
+main {
+    display: grid;
+    min-width: var(--template-min-width);
+    max-width: var(--template-max-width);
+    min-height: 100dvh;
+    margin: 0 auto;
+}
 
 /* 
     ****************************************************************************
@@ -12,6 +106,37 @@
     }
 }
 
+
+.form-field {
+    display: flex;
+    flex-direction: column;
+    gap: .8rem;
+
+    font-size: var(--font-size-sm);
+    font-weight: 400;
+    color: var(--text-muted);
+
+    input {
+        padding: 1.6rem 1.2rem;
+
+        font-size: var(--font-size-sm);
+        color: var(--text-main);
+
+        background: var(--bg-main);
+        border: solid 1px var(--border-color);
+        border-radius: 1rem;
+
+        &:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+
+        &:disabled {
+            color: var(--border-color);
+            background-color: var(--bg-disabled);
+        }
+    }
+}
 
 /* 
     ****************************************************************************
@@ -40,3 +165,90 @@
     }
 }
 
+/* 
+    ****************************************************************************
+    login page
+    ****************************************************************************
+*/
+.login {
+    display: flex;
+
+    .login-panel {
+        display: flex;
+        flex: 1 1 63.2rem;
+        flex-direction: column;
+        gap: 15.1rem;
+        padding: 5.6rem 10rem;
+    }
+
+    .form-container {
+        padding: 4rem 4rem 8rem 4rem;
+        background: var(--bg-main);
+        border-radius: 2rem;
+
+        p {
+            font-size: var(--font-size-xl);
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+    }
+
+    .side-image-panel {
+        position: relative;
+        flex: 1 1 80.8rem;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        p {
+            position: absolute;
+            bottom: 2.9rem;
+            right: 2.4rem;
+            width: 28.8rem;
+            padding: 1.6rem;
+
+            font-size: var(--font-size-xs);
+            font-weight: 400;
+            color: var(--primary-color);
+
+            background: var(--bg-main);
+            border-radius: 5rem;
+        }
+    }
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 2.4rem;
+}
+
+.login-button {
+    margin-block: 1.6rem;
+    padding-block: 1.6rem;
+
+    font-size: var(--font-size-md);
+    font-weight: 500;
+    color: var(--bg-disabled);
+
+    background-color: var(--primary-color);
+    border: none;
+    border-radius: 1rem;
+
+    transition: ease .25s background-color;
+
+    &:hover {
+        background-color: var(--primary-hover);
+        cursor: pointer;
+    }
+}
+
+.forgot-password-link {
+    font-size: var(--font-size-sm);
+    font-weight: 400;
+    text-decoration: none;
+    color: var(--text-main);
+}
