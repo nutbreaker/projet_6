@@ -325,3 +325,128 @@ footer {
     text-decoration: none;
     color: var(--text-main);
 }
+
+/* 
+    ****************************************************************************
+    profil page
+    ****************************************************************************
+*/
+.profil {
+    display: flex;
+    gap: 5.7rem;
+    min-width: var(--template-min-width);
+    max-width: var(--template-content-width);
+    margin: 3.5rem auto 10.8rem;
+    padding-inline: 1rem;
+}
+
+.user-profil {
+    padding: 4rem 2.8rem 6rem;
+    background-color: var(--bg-main);
+    border-radius: 1rem;
+
+    hr {
+        margin-block: 2.4rem 3.2rem;
+        border: solid 1px var(--bg-disabled);
+    }
+
+    ul {
+        display: grid;
+        gap: 2.4rem;
+        margin: 0;
+        padding: 0;
+
+        font-size: var(--font-size-md);
+        font-weight: 500;
+        color: var(--text-muted);
+
+        list-style: none;
+    }
+}
+
+.user-info-panel {
+    display: flex;
+    flex: 1 1 50%;
+    flex-direction: column;
+    gap: 1.6rem;
+
+    .user-info {
+        padding: 2.4rem 3.2rem;
+        background: var(--bg-main);
+        border-radius: 1rem;
+    }
+}
+
+.user-info {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 0.4rem 2.4rem;
+
+    img {
+        grid-row: 1/-1;
+        width: 10.4rem;
+        height: 11.7rem;
+        object-fit: cover;
+        border-radius: 1rem;
+    }
+
+    h2 {
+        align-self: end;
+    }
+
+    p {
+        align-self: start;
+        margin: 0;
+        font-size: var(--font-size-sm);
+        font-weight: 400;
+        color: var(--text-muted);
+    }
+}
+
+.data-profil {
+    display: grid;
+    gap: 1.9rem;
+    padding: 2rem 3rem;
+
+    background-color: var(--primary-color);
+    border-radius: 1rem;
+    color: var(--bg-main);
+
+    h3 {
+        margin: 0;
+        font-size: var(--font-size-sm);
+        font-weight: 400;
+    }
+
+    p {
+        margin: 0;
+        font-size: var(--font-size-lg);
+        font-weight: 500;
+    }
+
+    span {
+        font-size: var(--font-size-md);
+        font-weight: 500;
+        color: var(--secondary-color);
+    }
+}
+
+.user-stats-panel {
+    flex: 1 1 50%;
+
+    >p {
+        margin-top: .4rem;
+        color: var(--text-muted);
+        font-size: var(--font-size-sm);
+        font-weight: 400;
+    }
+}
+
+.user-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.9rem;
+    margin-top: 3.2rem;
+}
+
