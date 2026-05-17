@@ -93,6 +93,42 @@ main {
     margin: 0 auto;
 }
 
+footer {
+    min-width: var(--template-min-width);
+    max-width: var(--template-max-width);
+    margin: 0 auto;
+    padding: 1rem 10rem;
+
+    background-color: var(--bg-main);
+
+    ul {
+        display: flex;
+        align-items: center;
+        gap: 1.6rem;
+        margin: 0;
+        padding: 0;
+
+        font-size: var(--font-size-sm);
+        font-weight: 400;
+        color: var(--text-main);
+        list-style: none;
+    }
+
+    li:nth-child(2) {
+        margin-left: auto;
+    }
+
+    a {
+        text-decoration: none;
+        color: inherit;
+
+        &:hover {
+            color: var(--primary-color);
+        }
+
+    }
+}
+
 /* 
     ****************************************************************************
     shared components
@@ -106,6 +142,43 @@ main {
     }
 }
 
+.menu {
+    padding: 1.6rem 4.8rem;
+    background-color: var(--bg-main);
+    border-radius: 4rem;
+
+    ul {
+        display: flex;
+        gap: 4rem;
+        margin: 0;
+        padding: 0;
+
+        font-size: var(--font-size-sm);
+        font-weight: 400;
+        color: var(--primary-color);
+        list-style: none;
+    }
+
+    a {
+        text-decoration: none;
+        color: var(--text-main);
+
+        &:hover,
+        &.active {
+            color: var(--primary-color);
+        }
+
+        &.active {
+            pointer-events: none;
+        }
+    }
+
+    li {
+        &:last-child a {
+            color: var(--primary-color);
+        }
+    }
+}
 
 .form-field {
     display: flex;
