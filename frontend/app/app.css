@@ -211,6 +211,34 @@ footer {
     }
 }
 
+.chart-navigation {
+    display: flex;
+    align-items: center;
+    gap: .6rem;
+    color: var(--text-main);
+
+    button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 2.4rem;
+        height: 2.4rem;
+        padding: 0 0 .1rem 0;
+
+        font-family: unset;
+        font-size: var(--font-size-sm);
+        font-weight: lighter;
+        line-height: 1;
+        color: var(--text-main);
+
+        background: var(--bg-main);
+        border: .1rem solid var(--border-color);
+        border-radius: 1rem;
+
+        cursor: pointer;
+    }
+}
+
 /* 
     ****************************************************************************
     error page
@@ -450,3 +478,310 @@ footer {
     margin-top: 3.2rem;
 }
 
+/* 
+    ****************************************************************************
+    dashboard page
+    ****************************************************************************
+*/
+.dashboard {
+    min-width: var(--template-min-width);
+    max-width: var(--template-content-width);
+    padding-inline: 4.4rem;
+}
+
+.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    height: fit-content;
+    padding: 3.2rem 5.2rem;
+
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0) -8.38%, var(--bg-main) 100%);
+    border-radius: 2rem;
+}
+
+.dashboard-achievement {
+    display: flex;
+    align-items: center;
+    gap: 1.8rem;
+
+    >p {
+        font-size: var(--font-size-sm);
+        font-weight: 400;
+        color: var(--text-muted);
+    }
+}
+
+.achievement {
+    display: flex;
+    align-items: center;
+    gap: 1.9rem;
+    padding: 2.8rem 2.7rem;
+
+    background: var(--primary-color);
+    border-radius: 1rem;
+
+    p {
+        margin: 0;
+        font-size: var(--font-size-lg);
+        font-weight: 500;
+        color: var(--bg-main);
+    }
+}
+
+.latest-performance {
+    margin-block: 4.8rem 6.4rem;
+
+    h2 {
+        margin-bottom: 3.2rem;
+    }
+
+    .latest-performance-content {
+        display: grid;
+        grid-template-columns: minmax(auto, 44.5rem) 1fr;
+        gap: 2.4rem;
+    }
+}
+
+.this-week {
+    margin-bottom: 8rem;
+
+    h2 {
+        margin-bottom: 0.4rem;
+        font-size: var(--font-size-lg);
+        font-weight: 500;
+    }
+
+    .week-range {
+        margin: 0 0 3.2rem 0;
+        font-size: var(--font-size-md);
+        font-weight: 500;
+        color: var(--text-muted);
+    }
+
+    .this-week-content {
+        display: grid;
+        grid-template-columns: minmax(auto, 44.5rem) 1fr;
+        gap: 2.4rem;
+    }
+
+    .goal-chart {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 2.3rem 3.8rem;
+
+        background: var(--bg-main);
+        border-radius: 1rem;
+    }
+
+    .goal-header {
+        font-size: var(--font-size-xs);
+        font-weight: 400;
+
+        h2 {
+            display: flex;
+            align-items: center;
+            gap: .5rem;
+            margin: 0;
+
+            font-size: var(--font-size-xl);
+            font-weight: 600;
+
+            span:first-child {
+                color: var(--primary-color);
+            }
+
+            span:last-child {
+                font-size: var(--font-size-md);
+                font-weight: 500;
+                color: var(--secondary-color);
+            }
+        }
+
+        p {
+            margin-block: 1rem 4rem;
+            color: var(--text-muted);
+        }
+    }
+
+    .goal-chart-container {
+        position: relative;
+        margin-top: 2rem;
+    }
+
+
+    .goal-pie-chart {
+        .recharts-legend-wrapper {
+            height: 100% !important;
+        }
+
+        .legend-item-0 {
+            position: absolute;
+            top: 8%;
+            left: 62%;
+        }
+
+        .legend-item-1 {
+            position: absolute;
+            top: 74%;
+            right: 69%;
+        }
+    }
+
+    .week-metrics {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .metric-card {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 2rem 3rem;
+
+        background: var(--bg-main);
+        border-radius: 1rem;
+
+        h3 {
+            margin: 0 0 1.2rem 0;
+            font-size: var(--font-size-sm);
+            font-weight: 400;
+            color: var(--text-muted);
+        }
+
+        p {
+            display: flex;
+            align-items: baseline;
+            gap: .5rem;
+
+            margin: 0;
+
+            font-size: var(--font-size-lg);
+            font-weight: 500;
+
+            span:last-child {
+                font-size: var(--font-size-md);
+            }
+        }
+    }
+}
+
+/* 
+    ****************************************************************************
+    distance chart component
+    ****************************************************************************
+*/
+
+.distance-chart {
+    /* min-height: 472px; */
+    padding: 4rem;
+    background-color: var(--bg-main);
+    border-radius: 1rem;
+}
+
+.distance-chart-header {
+    display: flex;
+    flex-direction: column;
+    font-size: var(--font-size-xs);
+    font-weight: 400;
+    color: var(--text-main);
+
+    &>div {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+    }
+
+    h2 {
+        margin: 0;
+        color: var(--primary-color);
+        font-size: var(--font-size-lg);
+    }
+
+    p {
+        margin-block: 1rem 4rem;
+        color: var(--text-muted);
+    }
+}
+
+.distance-tooltip {
+    padding: 2.3rem 1.3rem;
+    color: var(--bg-disabled);
+    background-color: #171717;
+    border-radius: 1rem;
+
+    .tooltip-date {
+        margin: 0;
+        font-size: var(--font-size-xs);
+        font-weight: 400;
+        margin-bottom: 4px;
+    }
+
+    .tooltip-value {
+        margin: 0;
+        font-size: var(--font-size-md);
+        font-weight: 500;
+    }
+}
+
+.distance-bar-chart {
+    &:hover {
+        .recharts-rectangle {
+            fill: var(--primary-color) !important;
+        }
+    }
+
+    .recharts-legend-item {
+        display: flex;
+        align-items: center;
+    }
+}
+
+/* 
+    ****************************************************************************
+    heart chart component
+    ****************************************************************************
+*/
+.heart-rate-chart {
+
+    padding: 4rem;
+    background-color: var(--bg-main);
+    border-radius: 1rem;
+
+
+    &:hover {
+        .recharts-curve {
+            stroke: var(--primary-color) !important;
+        }
+    }
+
+    .heart-rate-chart-header {
+        display: flex;
+        flex-direction: column;
+            font-size: var(--font-size-xs);
+        font-weight: 400;
+        color: var(--text-main);
+
+        &>div {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+        }
+
+        h2 {
+            margin: 0;
+            color: var(--error-color);
+                font-size: var(--font-size-lg);
+        }
+
+        p {
+            margin-block: 1rem 4rem;
+            color: var(--text-muted);
+        }
+    }
+}
