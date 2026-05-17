@@ -15,6 +15,35 @@ SportSee is a sports analytics dashboard application that allows users to track 
 - npm or yarn
 - Docker (optional, but recommended to run the full stack easily)
 
+## Quick Start
+
+To get the project up and running quickly, follow these steps:
+
+1. **Clone the repository:**
+
+   ```bash
+   git clone --recurse-submodules git@github.com:nutbreaker/projet_6.git
+   cd projet_6
+   ```
+
+2. **Install frontend dependencies:**
+
+   ```bash
+   cd frontend
+   npm install
+   ```
+
+3. **Start the application:**
+
+   You can either start the frontend development server:
+   ```bash
+   npm run dev
+   ```
+   Or run the full stack using Docker:
+   ```bash
+   docker-compose --profile prod up
+   ```
+
 ## Git Submodule (Backend Setup)
 
 This project uses a Git submodule for the backend API.
