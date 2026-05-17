@@ -114,7 +114,6 @@ export default function HeartRateChart({ dataPromise, navigationDateRange }) {
                         align="left"
                         iconType="circle"
                         iconSize={8}
-                        wrapperStyle={{ paddingTop: "32px", fontSize: "12px", color: "#74798C" }}
                         // https://github.com/recharts/recharts/blob/0f9fb4d55795a7913a592bb7f9a383e1eb9648b2/src/component/Legend.tsx#L145
                         itemSorter={(item) => ["Min BPM", "Max BPM", "AVG BPM"].indexOf(item.value)}
                         formatter={(value) => {
