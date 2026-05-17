@@ -44,6 +44,15 @@ To get the project up and running quickly, follow these steps:
    docker-compose --profile prod up
    ```
 
+## Project Architecture
+
+- **`frontend/app/app.css`**: Global stylesheet following
+- **`frontend/app/components/`**: React visual components
+- **`frontend/app/hooks/`**: Business logic and application state management
+- **`frontend/app/services/`**: Data fetching
+- **`frontend/app/utils/`**: Utility functions
+- **`backend/`**: Node.js API provided via a Git submodule
+
 ## Git Submodule (Backend Setup)
 
 This project uses a Git submodule for the backend API.
