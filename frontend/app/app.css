@@ -1,1 +1,42 @@
 
+/* 
+    ****************************************************************************
+    shared components
+    ****************************************************************************
+*/
+.logo-link {
+    img {
+        display: block;
+        width: 15.7rem;
+        height: 2.4rem;
+    }
+}
+
+
+/* 
+    ****************************************************************************
+    error page
+    ****************************************************************************
+*/
+.error {
+    display: flex;
+    flex-direction: column;
+    place-content: center;
+    place-items: center;
+    height: 100dvh;
+
+    h1 {
+        margin: 0;
+        font-size: 33rem;
+        color: transparent;
+
+        background-image: url(img/login.jpg);
+        background-clip: text;
+    }
+
+    p {
+        margin: 0;
+        font-size: 6rem;
+    }
+}
+
