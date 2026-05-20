@@ -53,7 +53,7 @@ export default defineConfig({
               try {
                 const data = JSON.parse(body);
 
-                if (data.email === "user@email.com" && data.password === "asdf") {
+                if (data.username === "user@email.com" && data.password === "asdf") {
                   res.setHeader("Content-Type", "application/json");
                   res.end(JSON.stringify({
                     token: "mock-token",
