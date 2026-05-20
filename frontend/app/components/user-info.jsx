@@ -11,9 +11,13 @@ import { dateFormat } from "../utils/utils";
  * @returns {JSX.Element}
  */
 export default function UserInfo({ profilePicture, name, createdAt }) {
+    // fix wrong path when the app is deployed
+    const cleanProfilePicture =
+        document.location.hostname.includes('localhost') ? profilePicture : profilePicture.replace('http://localhost:8000', '');
+
     return (
         <div className="user-info">
-            <img src={profilePicture} alt={name} />
+            <img src={cleanProfilePicture} alt={name} />
             <h2>{name}</h2>
             <p>Membre depuis le {dateFormat(createdAt)}</p>
         </div>
